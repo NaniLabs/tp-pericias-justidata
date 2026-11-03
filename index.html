@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JustiData Solutions S.A. | Sistema de Gestión y Seguimiento de Pericias</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Encabezado institucional -->
+  <header class="encabezado">
+    <div class="contenedor marca">
+      <div class="marca-info">
+        <a href="index.html">JustiData <span>Solutions S.A.</span></a>
+        <p>Sistema de Gestión y Seguimiento de Pericias Judiciales</p>
+      </div>
+      <!-- Datos de sesión del usuario -->
+      <div class="datos-sesion">
+        <span class="usuario-nombre">Usuario: <strong>Carlos Gómez</strong></span>
+        <span class="usuario-rol">Rol: Operador Administrativo (Mesa de Entradas)</span>
+      </div>
+    </div>
+    <!-- Menú de navegación según ejemplo de cátedra -->
+    <nav aria-label="Navegación principal">
+      <div class="contenedor">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="nuevo-informe.html">Nuevo Informe</a></li>
+          <li><a href="buscar-informes.html">Buscar Informes</a></li>
+          <li><a href="informe.html">Informe por Pantalla</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenedor">
+    <section class="presentacion">
+      <p class="seccion">Ingeniería de Software I · FCyT UADER</p>
+      <h1>Sistema de Gestión y Seguimiento de Pericias</h1>
+      <p>
+        Plataforma centralizada desarrollada para <strong>JustiData Solutions S.A.</strong> con el objetivo de 
+        gestionar y controlar el ciclo de vida integral de las pericias judiciales, desde la solicitud inicial 
+        del organismo judicial, la designación de peritos e intervinientes, hasta la presentación del informe pericial 
+        y la liquidación de honorarios.
+      </p>
+      <div class="acciones">
+        <a class="boton" href="nuevo-informe.html">Cargar Nuevo Informe</a>
+        <a class="boton secundario" href="buscar-informes.html">Consultar Expedientes</a>
+      </div>
+    </section>
+
+    <!-- Accesos directos a las 3 interfaces solicitadas -->
+    <section aria-labelledby="accesos">
+      <h2 id="accesos">Interfaces del Sistema Requeridas (Punto 6)</h2>
+      <div class="accesos">
+        <article>
+          <h3>1. Formulario de Carga</h3>
+          <p>Alta de la pericia con organismo solicitante, personas vinculadas, especialidades y registro del primer informe o ampliación.</p>
+          <a class="boton" href="nuevo-informe.html">Ir al Formulario</a>
+        </article>
+
+        <article>
+          <h3>2. Búsqueda de Informes</h3>
+          <p>Consulta filtrada por organismo, número de expediente, categoría pericial, estado y perito interviniente.</p>
+          <a class="boton" href="buscar-informes.html">Ir a Búsqueda</a>
+        </article>
+
+        <article>
+          <h3>3. Informe por Pantalla</h3>
+          <p>Vista completa tipo reporte con ficha técnica, personas, historial de movimientos, actividades y módulo de honorarios.</p>
+          <a class="boton" href="informe.html">Ver Informe de Ejemplo</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resumen rápido de estado operativo -->
+    <section>
+      <h2>Resumen Operativo de Pericias</h2>
+      <div class="accesos">
+        <article class="tarjeta-resumen">
+          <span class="numero-resumen">18</span>
+          <p><strong>Pericias Solicitadas / En Análisis</strong></p>
+        </article>
+        <article class="tarjeta-resumen">
+          <span class="numero-resumen">42</span>
+          <p><strong>Informes Periciales Presentados</strong></p>
+        </article>
+        <article class="tarjeta-resumen">
+          <span class="numero-resumen">6</span>
+          <p><strong>Pericias en Estado de Mora</strong></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="contenedor">
+      <p><strong>JustiData Solutions S.A.</strong> · Servicios Tecnológicos y Administrativos Judiciales</p>
+      <p>Cátedra de Ingeniería de Software I · Licenciatura en Sistemas de Información · FCyT UADER (Año 2026)</p>
+    </div>
+  </footer>
+
+</body>
+</html>

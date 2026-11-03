@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe Pericial en Pantalla | JustiData Solutions S.A.</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Encabezado institucional (oculto en vista de impresión gracias a CSS print) -->
+  <header class="encabezado">
+    <div class="contenedor marca">
+      <div class="marca-info">
+        <a href="index.html">JustiData <span>Solutions S.A.</span></a>
+        <p>Sistema de Gestión y Seguimiento de Pericias Judiciales</p>
+      </div>
+      <div class="datos-sesion">
+        <span class="usuario-nombre">Usuario: <strong>Carlos Gómez</strong></span>
+        <span class="usuario-rol">Rol: Operador Administrativo (Mesa de Entradas)</span>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <div class="contenedor">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nuevo-informe.html">Nuevo Informe</a></li>
+          <li><a href="buscar-informes.html">Buscar Informes</a></li>
+          <li><a href="informe.html" aria-current="page">Informe por Pantalla</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- Barra de acciones y título del reporte -->
+    <div class="barra-reporte">
+      <div>
+        <p class="seccion">Ficha Pericial e Informe Técnico · Interfaz 3</p>
+        <h1>Informe Pericial: Exp. 18734/25</h1>
+        <p>Identificador Único del Sistema: <strong>Juzgado Civil y Comercial N° 3 · Pericia N° 2026-0142</strong></p>
+      </div>
+      <div class="acciones no-imprimir">
+        <button type="button" class="boton" onclick="window.print()">Imprimir / Guardar PDF</button>
+        <a class="boton secundario" href="buscar-informes.html">Volver a Búsqueda</a>
+      </div>
+    </div>
+
+    <!-- 1. Ficha Técnica General (Tabla Pericia y Categoría) -->
+    <section>
+      <h2>1. Datos Generales de la Pericia</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row" style="width: 25%;">Organismo Solicitante:</th>
+              <td>Juzgado Civil y Comercial N° 3 - Secretaría Única</td>
+              <th scope="row" style="width: 25%;">Fecha de Solicitud:</th>
+              <td>12/03/2026</td>
+            </tr>
+            <tr>
+              <th scope="row">Número de Pericia:</th>
+              <td>2026-0142</td>
+              <th scope="row">Número de Expediente:</th>
+              <td>EXP-18734/25</td>
+            </tr>
+            <tr>
+              <th scope="row">Categoría / Tipo:</th>
+              <td>Informática Forense</td>
+              <th scope="row">Área Técnica:</th>
+              <td>Evidencia Digital y Peritajes Tecnológicos</td>
+            </tr>
+            <tr>
+              <th scope="row">Estado Procesal Actual:</th>
+              <td colspan="3"><span class="etiqueta ok">En Análisis Técnico</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Objeto de la Pericia:</th>
+              <td colspan="3">
+                Análisis forense de tres (3) teléfonos móviles y una (1) notebook secuestrados en el marco 
+                de la causa caratulada "Defraudación electrónica s/ averiguación de ilícito". Determinación de 
+                integridad de datos, registros de mensajería instantánea y transferencias bancarias.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. Personas e Intervinientes (RF 2.1 - 2.4 y RF 6.1 Conteo de Personas) -->
+    <section>
+      <h2>2. Personas Intervinientes Vinculadas (Total: 3 personas)</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>DNI</th>
+              <th>Nombre y Apellido</th>
+              <th>Rol Asignado</th>
+              <th>Datos Profesionales / Hallazgos Técnicos (RF 2.4)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>33.902.110</td>
+              <td>Sofía Aguirre</td>
+              <td><span class="etiqueta ok">Perito Oficial</span></td>
+              <td>Mat. CPII-0391 · Especialidad: Informática Forense y Análisis de Redes · Colegio de Informática</td>
+            </tr>
+            <tr>
+              <td>41.230.987</td>
+              <td>Carlos Rojas</td>
+              <td><span class="etiqueta">Evaluado / Imputado</span></td>
+              <td>Titular del equipo celular examinado. Hallazgo: 214 archivos recuperados de transacciones no autorizadas.</td>
+            </tr>
+            <tr>
+              <td>25.100.333</td>
+              <td>Julio Sosa</td>
+              <td><span class="etiqueta">Testigo</span></td>
+              <td>Oficial a cargo del secuestro. Participa para ratificación de cadena de custodia del hardware.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. Historial Cronológico de Movimientos e Informes (RF 3.1 y 3.2) -->
+    <section>
+      <h2>3. Cronología de Movimientos e Informes Periciales</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Carácter de la Presentación (RF 3.2)</th>
+              <th>Tipo de Actividad</th>
+              <th>Descripción y Actuaciones Realizadas</th>
+              <th>Usuario Responsable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14/03/2026</td>
+              <td><strong>Informe Pericial (Primer Movimiento)</strong></td>
+              <td>Recepción y asignación</td>
+              <td>Ingreso formal de los dispositivos en sede de JustiData. Verificación de precintos y apertura de expediente técnico.</td>
+              <td>Carlos Gómez (Operador)</td>
+            </tr>
+            <tr>
+              <td>20/03/2026</td>
+              <td><strong>Ampliación de Pericia</strong></td>
+              <td>Prueba técnica / Clonado</td>
+              <td>Extracción bit a bit con bloqueador de escritura forense. Generación de imágenes RAW y cálculo de hash SHA-256 coincidente.</td>
+              <td>Sofía Aguirre (Perito)</td>
+            </tr>
+            <tr>
+              <td>02/04/2026</td>
+              <td><strong>Ampliación de Pericia</strong></td>
+              <td>Elaboración de informe pericial</td>
+              <td>Presentación de informe pericial de resultados preliminares y correlación de chats recuperados con transferencias bancarias.</td>
+              <td>Sofía Aguirre (Perito)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Actividades Programadas y Asistencia (RF 3.3 y 3.4) -->
+    <section>
+      <h2>4. Actividades Programadas y Registro de Asistencia</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha y Hora</th>
+              <th>Lugar</th>
+              <th>Perito a Cargo</th>
+              <th>Estado de Actividad</th>
+              <th>Convocados y Registro de Asistencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>25/03/2026 · 10:00 hs</td>
+              <td>Sede JustiData Solutions - Sala Pericial 2</td>
+              <td>Sofía Aguirre</td>
+              <td><span class="etiqueta ok">Realizada</span></td>
+              <td>
+                Sofía Aguirre (Asistió) · Carlos Rojas (Asistió con patrocinio letrado)
+              </td>
+            </tr>
+            <tr>
+              <td>08/05/2026 · 09:30 hs</td>
+              <td>Palacio de Tribunales - Sala de Peritos N° 1</td>
+              <td>Sofía Aguirre</td>
+              <td><span class="etiqueta">Programada</span></td>
+              <td>
+                Sofía Aguirre (Convocada) · Julio Sosa (Convocado para ratificación de actas)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. Historial de Auditoría de Estados (RF 4.2) -->
+    <section>
+      <h2>5. Historial de Cambios de Estado Procesal</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha y Hora de Modificación</th>
+              <th>Estado Registrado</th>
+              <th>Usuario Responsable</th>
+              <th>Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12/03/2026 · 08:45 hs</td>
+              <td>Solicitada</td>
+              <td>Carlos Gómez</td>
+              <td>Ingreso inicial de la solicitud judicial desde el Juzgado N° 3.</td>
+            </tr>
+            <tr>
+              <td>20/03/2026 · 11:30 hs</td>
+              <td>En Análisis</td>
+              <td>Sofía Aguirre</td>
+              <td>Inicio formal de los peritajes y apertura de precintos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. Módulo de Honorarios, Liquidación y Tabla de Decisión -->
+    <section>
+      <h2>6. Liquidación de Honorarios y Gestión de Pagos (Tabla de Decisión)</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Arancel Base Regulado</th>
+              <th>Modalidad de Pago Seleccionada</th>
+              <th>Ajuste Aplicado s/ Tabla de Decisión</th>
+              <th>Monto Total Liquidado</th>
+              <th>Estado del Pago</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$ 320.000,00</td>
+              <td><strong>En Cuotas</strong></td>
+              <td>Recargo del 50% (Costos adm. y financieros)</td>
+              <td>$ 480.000,00</td>
+              <td><span class="etiqueta mora">Vencido / En Mora</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Cuadro de reglas de la tabla de decisión aplicada -->
+      <div class="nota" style="margin-top: 1rem;">
+        <p><strong>Resolución según la Tabla de Decisión del TP:</strong></p>
+        <p>
+          Al encontrarse la liquidación en modalidad <strong>Cuotas</strong> con plazo <strong>Vencido/Mora</strong>, 
+          el sistema aplica las siguientes acciones automáticas:
+        </p>
+        <ul>
+          <li><strong>Acción A5:</strong> Pasar la pericia automáticamente a <em>Estado de Mora</em>.</li>
+          <li><strong>Acción A6:</strong> Habilitar al perito para iniciar el <em>Juicio de Ejecución de Honorarios</em> contra la parte obligada al pago.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página (oculto en impresión) -->
+  <footer>
+    <div class="contenedor">
+      <p><strong>JustiData Solutions S.A.</strong> · Servicios Tecnológicos y Administrativos Judiciales</p>
+      <p>Cátedra de Ingeniería de Software I · Licenciatura en Sistemas de Información · FCyT UADER (Año 2026)</p>
+    </div>
+  </footer>
+
+</body>
+</html>

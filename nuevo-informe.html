@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carga de Nuevo Informe | JustiData Solutions S.A.</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Encabezado institucional -->
+  <header class="encabezado">
+    <div class="contenedor marca">
+      <div class="marca-info">
+        <a href="index.html">JustiData <span>Solutions S.A.</span></a>
+        <p>Sistema de Gestión y Seguimiento de Pericias Judiciales</p>
+      </div>
+      <div class="datos-sesion">
+        <span class="usuario-nombre">Usuario: <strong>Carlos Gómez</strong></span>
+        <span class="usuario-rol">Rol: Operador Administrativo (Mesa de Entradas)</span>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <div class="contenedor">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nuevo-informe.html" aria-current="page">Nuevo Informe</a></li>
+          <li><a href="buscar-informes.html">Buscar Informes</a></li>
+          <li><a href="informe.html">Informe por Pantalla</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <div class="titulo">
+      <p class="seccion">Módulo Operativo · Interfaz 1</p>
+      <h1>Formulario de Carga de Nuevo Informe</h1>
+      <p>
+        Ingrese los datos de la pericia, vincule a los peritos e intervinientes, y registre la actuación 
+        o informe técnico inicial según los requerimientos del sistema.
+      </p>
+    </div>
+
+    <!-- Formulario principal con method POST y action a la vista del informe -->
+    <form name="formNuevoInforme" id="formNuevoInforme" action="informe.html" method="get">
+      
+      <!-- Sección 1: Datos de la Pericia (Tabla Pericia y Categoría) -->
+      <fieldset>
+        <legend>1. Información General de la Pericia</legend>
+        <div class="campos">
+          <div>
+            <label for="organismo">Organismo Solicitante: *</label>
+            <input type="text" id="organismo" name="organismo" placeholder="Ej.: Juzgado Civil y Comercial N° 3" required>
+          </div>
+
+          <div>
+            <label for="nroPericia">Número de Pericia (Asignado por Organismo): *</label>
+            <input type="text" id="nroPericia" name="nroPericia" placeholder="Ej.: 2026-0142" required>
+          </div>
+
+          <div>
+            <label for="expediente">Número de Expediente: *</label>
+            <input type="text" id="expediente" name="expediente" placeholder="Ej.: EXP-18734/25" required>
+          </div>
+
+          <div>
+            <label for="fechaSolicitud">Fecha de Solicitud: *</label>
+            <input type="date" id="fechaSolicitud" name="fechaSolicitud" value="2026-03-12" required>
+          </div>
+
+          <div>
+            <label for="categoria">Categoría / Tipo de Pericia: *</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">-- Seleccionar categoría --</option>
+              <option value="Informatica" selected>Informática</option>
+              <option value="Medica">Médica</option>
+              <option value="Psicologica">Psicológica</option>
+              <option value="Contable">Contable</option>
+              <option value="Accidentologica">Accidentológica</option>
+              <option value="Documentologica">Documentológica</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="areaTecnica">Área Técnica Responsable: *</label>
+            <input type="text" id="areaTecnica" name="areaTecnica" placeholder="Ej.: Evidencia Digital y Forense" value="Evidencia Digital" required>
+          </div>
+
+          <div class="ancho">
+            <label for="descripcionCaso">Descripción General del Caso / Objeto Pericial: *</label>
+            <textarea id="descripcionCaso" name="descripcionCaso" rows="3" placeholder="Detalle sintético del objeto de la pericia solicitado por el juez o fiscal..." required>Análisis forense de dispositivos secuestrados en el marco de la investigación por defraudación electrónica.</textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Sección 2: Personas Involucradas (Tablas Persona y Pericia-Persona) -->
+      <fieldset>
+        <legend>2. Personas e Intervinientes en la Pericia</legend>
+        <p class="nota">
+          <strong>Registro Único (RF 2.1):</strong> Las personas se registran una sola vez en el sistema y se vinculan a la pericia con su rol correspondiente.
+        </p>
+
+        <div class="campos">
+          <div>
+            <label for="dniPersona">Número de Documento (DNI):</label>
+            <input type="number" id="dniPersona" name="dniPersona" placeholder="Ej.: 33902110">
+          </div>
+
+          <div>
+            <label for="nombreApellido">Nombre y Apellido:</label>
+            <input type="text" id="nombreApellido" name="nombreApellido" placeholder="Ej.: Sofía Aguirre">
+          </div>
+
+          <div>
+            <label for="rolPersona">Rol en la Pericia: *</label>
+            <select id="rolPersona" name="rolPersona">
+              <option value="">-- Seleccione rol --</option>
+              <option value="Perito Oficial" selected>Perito Oficial</option>
+              <option value="Perito de Oficio">Perito de Oficio</option>
+              <option value="Perito de Parte">Perito de Parte</option>
+              <option value="Evaluado">Persona Evaluada</option>
+              <option value="Testigo">Testigo</option>
+              <option value="Asistente">Profesional Asistente</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="matricula">Matrícula / Org. Profesional (si es perito):</label>
+            <input type="text" id="matricula" name="matricula" placeholder="Ej.: CPII-0391 · Col. de Informática" value="CPII-0391">
+          </div>
+
+          <div class="ancho">
+            <label for="hallazgos">Motivo de Análisis o Hallazgos Técnicos (si es evaluado):</label>
+            <textarea id="hallazgos" name="hallazgos" rows="2" placeholder="Describir motivo y resultados preliminares si corresponde a una persona evaluada..."></textarea>
+          </div>
+        </div>
+
+        <!-- Tabla de personas ya agregadas al expediente -->
+        <div style="margin-top: 1.5rem;">
+          <h3>Intervinientes Vinculados a este Expediente</h3>
+          <div class="tabla-contenedor">
+            <table>
+              <thead>
+                <tr>
+                  <th>DNI</th>
+                  <th>Nombre y Apellido</th>
+                  <th>Rol en Pericia</th>
+                  <th>Datos Profesionales / Hallazgos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>33.902.110</td>
+                  <td>Sofía Aguirre</td>
+                  <td><span class="etiqueta ok">Perito Oficial</span></td>
+                  <td>Mat. CPII-0391 · Informática Forense</td>
+                </tr>
+                <tr>
+                  <td>41.230.987</td>
+                  <td>Carlos Rojas</td>
+                  <td><span class="etiqueta">Evaluado</span></td>
+                  <td>Peritaje de equipo personal secuestrado</td>
+                </tr>
+                <tr>
+                  <td>25.100.333</td>
+                  <td>Julio Sosa</td>
+                  <td><span class="etiqueta">Testigo</span></td>
+                  <td>Declaración sobre cadena de custodia</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Sección 3: Datos del Movimiento / Informe Pericial (Tablas Movimiento y Estado) -->
+      <fieldset>
+        <legend>3. Actuación / Informe Pericial Registrado</legend>
+        <div class="campos">
+          <div>
+            <label for="tipoInforme">Tipo de Presentación (RF 3.2): *</label>
+            <select id="tipoInforme" name="tipoInforme" required>
+              <option value="Informe Pericial (Primer Movimiento)" selected>Informe Pericial (Primer Movimiento)</option>
+              <option value="Ampliación de Pericia">Ampliación de Pericia (Movimiento Posterior)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="fechaMovimiento">Fecha de la Actuación: *</label>
+            <input type="date" id="fechaMovimiento" name="fechaMovimiento" value="2026-03-14" required>
+          </div>
+
+          <div>
+            <label for="tipoActividad">Tipo de Actividad / Movimiento: *</label>
+            <select id="tipoActividad" name="tipoActividad" required>
+              <option value="Recepción de solicitud">Recepción de Solicitud</option>
+              <option value="Asignación de peritos">Asignación de Peritos</option>
+              <option value="Análisis de documentación">Análisis de Documentación</option>
+              <option value="Prueba técnica">Prueba Técnica / Análisis Forense</option>
+              <option value="Elaboración de informe" selected>Elaboración de Informe Final</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="estadoPericia">Actualizar Estado de la Pericia (RF 4.1): *</label>
+            <select id="estadoPericia" name="estadoPericia" required>
+              <option value="Solicitada">Solicitada</option>
+              <option value="En analisis" selected>En Análisis</option>
+              <option value="En proceso de evaluacion">En Proceso de Evaluación</option>
+              <option value="En elaboracion de informe">En Elaboración de Informe</option>
+              <option value="Finalizada">Finalizada</option>
+              <option value="Suspendida">Suspendida</option>
+              <option value="Impugnada">Impugnada</option>
+              <option value="En mora">En Mora</option>
+            </select>
+          </div>
+
+          <div class="ancho">
+            <label for="descripcionMovimiento">Detalle y Conclusiones Técnicas del Informe: *</label>
+            <textarea id="descripcionMovimiento" name="descripcionMovimiento" rows="5" placeholder="Detalle exhaustivo de las conclusiones periciales, metodología y evidencias..." required>Se concluyó la extracción física de la memoria del dispositivo secuestrado bajo protocolo de cadena de custodia. Se recuperaron 214 registros de transacciones electrónicas vinculadas a la causa. Se adjuntan anexos técnicos e imágenes de hash SHA-256 de las evidencias.</textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Botones de acción del formulario -->
+      <div class="acciones">
+        <button type="submit" class="boton">Guardar y Ver Informe Generado</button>
+        <button type="reset" class="boton secundario">Limpiar Formulario</button>
+      </div>
+
+    </form>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p><strong>JustiData Solutions S.A.</strong> · Servicios Tecnológicos y Administrativos Judiciales</p>
+      <p>Cátedra de Ingeniería de Software I · Licenciatura en Sistemas de Información · FCyT UADER (Año 2026)</p>
+    </div>
+  </footer>
+
+</body>
+</html>

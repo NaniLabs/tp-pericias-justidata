@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Informes y Pericias | JustiData Solutions S.A.</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Encabezado institucional -->
+  <header class="encabezado">
+    <div class="contenedor marca">
+      <div class="marca-info">
+        <a href="index.html">JustiData <span>Solutions S.A.</span></a>
+        <p>Sistema de Gestión y Seguimiento de Pericias Judiciales</p>
+      </div>
+      <div class="datos-sesion">
+        <span class="usuario-nombre">Usuario: <strong>Carlos Gómez</strong></span>
+        <span class="usuario-rol">Rol: Operador Administrativo (Mesa de Entradas)</span>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <div class="contenedor">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nuevo-informe.html">Nuevo Informe</a></li>
+          <li><a href="buscar-informes.html" aria-current="page">Buscar Informes</a></li>
+          <li><a href="informe.html">Informe por Pantalla</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <div class="titulo">
+      <p class="seccion">Módulo de Consulta · Interfaz 2</p>
+      <h1>Pantalla de Búsqueda de Informes</h1>
+      <p>
+        Localice de manera rápida y centralizada expedientes periciales mediante filtros combinados 
+        por organismo judicial, perito, categoría o estado procesal.
+      </p>
+    </div>
+
+    <!-- Formulario de filtros de búsqueda (Formulario HTML según apuntes de cátedra) -->
+    <form name="formBusqueda" id="formBusqueda" action="buscar-informes.html" method="get">
+      <fieldset>
+        <legend>Filtros de Búsqueda de Pericias e Informes</legend>
+        <div class="campos">
+          <div>
+            <label for="organismoFiltro">Organismo Solicitante:</label>
+            <input type="text" id="organismoFiltro" name="organismo" placeholder="Ej.: Juzgado Civil N° 3, Fiscalía...">
+          </div>
+
+          <div>
+            <label for="expedienteFiltro">N° de Pericia o Expediente:</label>
+            <input type="text" id="expedienteFiltro" name="expediente" placeholder="Ej.: EXP-18734/25 o 2026-0142">
+          </div>
+
+          <div>
+            <label for="categoriaFiltro">Categoría / Tipo de Pericia:</label>
+            <select id="categoriaFiltro" name="categoria">
+              <option value="">-- Todas las categorías --</option>
+              <option value="Informatica">Informática</option>
+              <option value="Medica">Médica</option>
+              <option value="Psicologica">Psicológica</option>
+              <option value="Contable">Contable</option>
+              <option value="Accidentologica">Accidentológica</option>
+              <option value="Documentologica">Documentológica</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="estadoFiltro">Estado Actual de la Pericia:</label>
+            <select id="estadoFiltro" name="estado">
+              <option value="">-- Todos los estados --</option>
+              <option value="Solicitada">Solicitada</option>
+              <option value="En analisis">En Análisis</option>
+              <option value="En proceso">En Proceso de Evaluación</option>
+              <option value="Finalizada">Finalizada</option>
+              <option value="Impugnada">Impugnada</option>
+              <option value="En mora">En Mora</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="peritoFiltro">Perito Responsable:</label>
+            <input type="text" id="peritoFiltro" name="perito" placeholder="Apellido o nombre del perito...">
+          </div>
+
+          <div>
+            <label for="fechaDesde">Fecha de Solicitud (Desde):</label>
+            <input type="date" id="fechaDesde" name="fechaDesde">
+          </div>
+        </div>
+
+        <div class="acciones">
+          <button type="submit" class="boton">Aplicar Filtros</button>
+          <button type="reset" class="boton secundario">Reestablecer Filtros</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Tabla de resultados de la búsqueda -->
+    <section>
+      <h2>Resultados de la Búsqueda (3 expedientes encontrados)</h2>
+      <div class="tabla-contenedor">
+        <table>
+          <caption>Listado de Pericias Registradas en el Sistema JustiData</caption>
+          <thead>
+            <tr>
+              <th scope="col">ID / N° Pericia</th>
+              <th scope="col">Expediente</th>
+              <th scope="col">Organismo Solicitante</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Perito Responsable</th>
+              <th scope="col">Fecha Solicitud</th>
+              <th scope="col">Último Movimiento</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>2026-0142</strong></td>
+              <td>EXP-18734/25</td>
+              <td>Juzgado Civil y Comercial N° 3</td>
+              <td>Informática</td>
+              <td>Sofía Aguirre (Oficial)</td>
+              <td>12/03/2026</td>
+              <td>Ampliación de Pericia</td>
+              <td><span class="etiqueta ok">En Análisis</span></td>
+              <td><a class="boton" href="informe.html">Ver Informe</a></td>
+            </tr>
+            <tr>
+              <td><strong>2026-0057</strong></td>
+              <td>EXP-9120/26</td>
+              <td>Fiscalía de Instrucción N° 1</td>
+              <td>Psicológica</td>
+              <td>Laura Benítez (De Oficio)</td>
+              <td>18/02/2026</td>
+              <td>Informe Pericial</td>
+              <td><span class="etiqueta ok">Finalizada</span></td>
+              <td><a class="boton" href="informe.html">Ver Informe</a></td>
+            </tr>
+            <tr>
+              <td><strong>2026-0009</strong></td>
+              <td>EXP-3350/26</td>
+              <td>Estudio Jurídico Pereyra & Asoc.</td>
+              <td>Contable</td>
+              <td>Martín Echeverría (De Parte)</td>
+              <td>06/04/2026</td>
+              <td>Informe Pericial</td>
+              <td><span class="etiqueta mora">Impugnada / En Mora</span></td>
+              <td><a class="boton" href="informe.html">Ver Informe</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p><strong>JustiData Solutions S.A.</strong> · Servicios Tecnológicos y Administrativos Judiciales</p>
+      <p>Cátedra de Ingeniería de Software I · Licenciatura en Sistemas de Información · FCyT UADER (Año 2026)</p>
+    </div>
+  </footer>
+
+</body>
+</html>

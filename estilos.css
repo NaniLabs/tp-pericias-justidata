@@ -1,0 +1,475 @@
+/* ==========================================================================
+   Estilos Institucionales - JustiData Solutions S.A.
+   Cátedra: Ingeniería de Software I - FCyT UADER
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #243342;
+  background-color: #f4f6f9;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.contenedor {
+  width: min(100% - 2rem, 1120px);
+  margin: 0 auto;
+}
+
+/* Encabezado y Marca */
+.encabezado {
+  background-color: #16324a;
+  color: #ffffff;
+}
+
+.marca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.marca a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.marca span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #c9d8e5;
+}
+
+.marca p {
+  margin: 0.2rem 0 0;
+  color: #e0e9f1;
+  font-size: 0.9rem;
+}
+
+/* Datos de Sesión */
+.datos-sesion {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.usuario-rol {
+  color: #b8d2e8;
+  font-size: 0.8rem;
+}
+
+/* Barra de Navegación */
+nav {
+  background-color: #214461;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #16324a;
+  border-bottom-color: #4a9bd9;
+  font-weight: bold;
+}
+
+/* Enlaces y Accesibilidad */
+a {
+  color: #12558a;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #b76b16;
+  outline-offset: 2px;
+}
+
+/* Contenido Principal */
+main {
+  padding-top: 1.8rem;
+  padding-bottom: 3rem;
+  min-height: 70vh;
+}
+
+h1, h2, h3 {
+  color: #16324a;
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 1.9rem;
+}
+
+h2 {
+  margin: 1.5rem 0 0.8rem;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #d8e2eb;
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 0.85rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.titulo {
+  margin-bottom: 1.5rem;
+}
+
+.seccion {
+  margin-bottom: 0.2rem;
+  color: #4f687e;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.presentacion {
+  padding: 1.6rem;
+  background-color: #e5edf3;
+  border-left: 5px solid #275274;
+  border-radius: 4px;
+}
+
+.presentacion p {
+  max-width: 75ch;
+}
+
+/* Tarjetas y Accesos */
+.accesos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.accesos article {
+  background-color: #ffffff;
+  border: 1px solid #c9d8e3;
+  border-radius: 4px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.accesos article p {
+  color: #455a6d;
+  font-size: 0.92rem;
+}
+
+.tarjeta-resumen {
+  text-align: center;
+  padding: 1.5rem 1rem !important;
+}
+
+.numero-resumen {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #16324a;
+  margin-bottom: 0.3rem;
+}
+
+.nota {
+  padding: 0.75rem 1rem;
+  background-color: #e8f1f7;
+  border-left: 4px solid #4a8db9;
+  border-radius: 3px;
+  font-size: 0.92rem;
+  margin: 1rem 0;
+}
+
+/* Formularios */
+fieldset {
+  margin: 0 0 1.5rem;
+  padding: 1.3rem;
+  border: 1px solid #bfd0dc;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: #16324a;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.4rem;
+}
+
+.ancho {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #1c3247;
+}
+
+input, select, textarea, button {
+  font: inherit;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  color: #243342;
+  background-color: #ffffff;
+  border: 1px solid #7c92a3;
+  border-radius: 3px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.boton, button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #16324a;
+  border-radius: 3px;
+  background-color: #16324a;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+
+.boton:hover, button:hover {
+  background-color: #254a6b;
+}
+
+.boton.secundario, button.secundario {
+  background-color: #ffffff;
+  color: #16324a;
+  border-color: #7c92a3;
+}
+
+.boton.secundario:hover, button.secundario:hover {
+  background-color: #e5edf3;
+}
+
+/* Tablas */
+.tabla-contenedor {
+  overflow-x: auto;
+  margin: 0.8rem 0;
+  border: 1px solid #c2d1dc;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+caption {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  font-weight: bold;
+  color: #4a6378;
+  font-size: 0.85rem;
+  background-color: #f0f4f8;
+}
+
+th, td {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #d4e0e8;
+  vertical-align: top;
+}
+
+th {
+  background-color: #e6eef4;
+  color: #16324a;
+  font-weight: bold;
+}
+
+/* Etiquetas y Estados */
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #e1ebf2;
+  color: #1f4e72;
+}
+
+.etiqueta.ok {
+  background-color: #d8f1e1;
+  color: #166938;
+}
+
+.etiqueta.mora {
+  background-color: #fbe0de;
+  color: #a7231a;
+}
+
+/* Barra superior de reporte */
+.barra-reporte {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Pie de página */
+footer {
+  padding: 1.4rem 0;
+  background-color: #e3ebf1;
+  color: #40576a;
+  font-size: 0.85rem;
+  border-top: 1px solid #c9d8e3;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .campos {
+    grid-template-columns: 1fr;
+  }
+  .ancho {
+    grid-column: auto;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .marca {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav a {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Reglas de Impresión para Informe Pericial (PDF / Papel) */
+@media print {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 10.5pt;
+  }
+
+  .contenedor {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .encabezado,
+  footer,
+  .no-imprimir,
+  nav {
+    display: none !important;
+  }
+
+  main {
+    padding: 0;
+    min-height: auto;
+  }
+
+  h1, h2, h3 {
+    color: #000000;
+  }
+
+  h1 {
+    font-size: 16pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+    border-bottom: 1px solid #666;
+    margin-top: 1rem;
+  }
+
+  section {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  th, td {
+    border: 1px solid #444444 !important;
+    padding: 0.35rem 0.5rem;
+  }
+
+  th {
+    background-color: #f0f0f0 !important;
+    color: #000000 !important;
+  }
+
+  .tabla-contenedor {
+    border: none;
+    overflow: visible;
+  }
+
+  .etiqueta {
+    border: 1px solid #666;
+    background: none !important;
+    color: #000 !important;
+  }
+}
